@@ -19,7 +19,18 @@ const BST = require('./lib/bst.js')
 
 ## Accessing methods
 
-[TO BE COMPLETED]
+Use the following commands to access the Binary Search Tree and Binary Tree library methods:
+```
+BST.insert(node)
+BST.find(value) = []
+BST.remove(value) = [removed value] // Returns removed value and removes it from the tree.
+BST.isBalanced() = [true or false] // Return true of false base on if the tree is balanced or not.
+BinaryTree.preOrderTraversal() = // Prints out the binary tree in pre-order orientation (ROOT LEFT RRIGHT)
+BinaryTree.postOrderTraversal() = // Prints out the binary tree in post-order orientation (LEFT RIGHT ROOT)
+BinaryTree.inOrderTraversal() = // Prints out the binary tree in in-order orientation (LEFT ROOT RIGHT)
+```
+
+Helper functions are all labeled with an _ preceeding the function name. I will not display them, but please do not use them unless you're implementing features for other functions.
 
 ## Running tests
 
