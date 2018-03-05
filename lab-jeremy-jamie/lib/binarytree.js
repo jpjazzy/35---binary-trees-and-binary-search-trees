@@ -1,14 +1,14 @@
 'use strict';
 
-class TreeNode {
+module.exports.TreeNode = class TreeNode {
   constructor(value,left=null,right=null){
     this.value = value;
     this.left = left;
     this.right = right;
   }
-}
+};
 
-class BinaryTree {
+module.exports.BinaryTree = class BinaryTree {
   constructor(root=null){
     this.root = root;
   }
@@ -20,14 +20,14 @@ class BinaryTree {
   }
 
   _inOrderTraversal(root, resultArr){
-    // vinicio - this is a base case
+    // this is a base case
     if(root === null)
       return null;
 
     let result = resultArr;
     // visit left
     this._inOrderTraversal(root.left, result);
-    // visit root
+    // push root value to the result array (passed in as resultArr recursively)
     // console.log(`Visiting ${root.value}`);
     result.push(root.value);
     // visit right
@@ -43,12 +43,12 @@ class BinaryTree {
   }
 
   _preOrderTraversal(root, resultArr){
-    // vinicio - this is a base case
+    // this is a base case
     if(root === null)
       return null;
 
     let result = resultArr;
-    // visit root
+    // push root value to the result array (passed in as resultArr recursively)
     // console.log(`Visiting ${root.value}`);
     result.push(root.value);
     // visit left
@@ -66,7 +66,7 @@ class BinaryTree {
   }
 
   _postOrderTraversal(root, resultArr){
-    // vinicio - this is a base case
+    // this is a base case
     if(root === null)
       return null;
 
@@ -76,13 +76,11 @@ class BinaryTree {
     this._postOrderTraversal(root.left, result);
     // visit right
     this._postOrderTraversal(root.right, result);
-    // visit root
+    // push root value to the result array (passed in as resultArr recursively)
     // console.log(`Visiting ${root.value}`);
     result.push(root.value);
 
     return result;
   }
 
-}
-
-export {BinaryTree, TreeNode};
+};

@@ -1,14 +1,14 @@
 'use strict';
 
-class TreeNode {
+module.exports.TreeNode = class TreeNode {
   constructor(value,left=null,right=null){
     this.value = value;
     this.left = left;
     this.right = right;
   }
-}
+};
 
-class BST {
+module.exports.BST = class BST {
   constructor(root=null){
     this.root = root;
   }
@@ -22,13 +22,13 @@ class BST {
 
   _insert(root,nodeToInsert){
     if(nodeToInsert.value < root.value){
-      // Vinicio - going left
+      // going left
       if(!root.left)
         root.left = nodeToInsert;
       else
         this._insert(root.left,nodeToInsert);
     } else {
-      // Vinicio - going right
+      // going right
       if(!root.right)
         root.right = nodeToInsert;
       else
@@ -38,7 +38,6 @@ class BST {
 
   find(value){
     return this._find(this.root,value);
-
   }
 
   _find(root,value){
@@ -173,6 +172,4 @@ class BST {
       return this._findMinNode(node.left);
   }
 
-}
-
-export {BST, TreeNode};
+};

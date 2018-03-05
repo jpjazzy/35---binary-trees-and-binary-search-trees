@@ -13,17 +13,21 @@ _Last modified_: 3/3/2018
 
 Install with the following command: 
 ```
-const BinaryTree = require('./lib/binarytree.js')
-const BST = require('./lib/bst.js')
+const BinaryTree = require('./lib/binarytree.js').BinaryTree; // imports BinaryTree Class and methods
+const BST = require('./lib/bst.js').BST; // imports BST Class and methods
+
+// Use treenode from one of the following libraries
+const TreeNode = require('./lib/bst.js').TreeNode; // import TreeNode class from BST library
+const TreeNode = require('./lib/binarytree.js').TreeNode; // import TreeNode class from BST library
 ```
 
 ## Accessing methods
 
 Use the following commands to access the Binary Search Tree and Binary Tree library methods:
 ```
-BST.insert(node)
-BST.find(value) = []
-BST.remove(value) = [removed value] // Returns removed value and removes it from the tree.
+BST.insert(TreeNode) = [undefined] // returns nothing, but alters the tree being operated on by inserting a TreeNode
+BST.find(value) = [node with found value or null] // Returns a node with the value searched for or null if not found
+BST.remove(value) = [undefined] // Returns nothing, but alters the tree being operated on by removing a TreeNode
 BST.isBalanced() = [true or false] // Return true of false base on if the tree is balanced or not.
 BinaryTree.preOrderTraversal() = // Prints out the binary tree in pre-order orientation (ROOT LEFT RRIGHT)
 BinaryTree.postOrderTraversal() = // Prints out the binary tree in post-order orientation (LEFT RIGHT ROOT)
@@ -34,7 +38,7 @@ Helper functions are all labeled with an _ preceeding the function name. I will 
 
 ## Running tests
 
-Simply use the following command in your terminal:
+Simply use the following command in your terminal once you have jest installed:
 ```
 npm run test
 ```

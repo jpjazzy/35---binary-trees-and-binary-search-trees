@@ -1,4 +1,5 @@
-import {BinaryTree, TreeNode} from '../lib/binarytree';
+const BinaryTree = require('../lib/binarytree').BinaryTree;
+const TreeNode = require('../lib/binarytree').TreeNode;
 require('jest');
 
 describe('Binary Tree testing', function() {
@@ -39,12 +40,29 @@ describe('Binary Tree testing', function() {
       it('Should return the tree post-order: [ 8, 9, 7, 6, 2, 4, 5, 3, 1]', () => {
         expect(binaryTree.postOrderTraversal()).toEqual([ 8, 9, 7, 6, 2, 4, 5, 3, 1 ]);
       });
-    });
-  });
 
-  describe('#Invalid testing', function() {
-    it('Should return an err starting twice', () => {
-      expect(true).toBe(true);
+      it('Should return null for an empty tree. (in-order)', () => {
+        expect(new BinaryTree().inOrderTraversal()).toBeNull();
+      });
+      it('Should return null for an empty tree. (pre-order)', () => {
+        expect(new BinaryTree().preOrderTraversal()).toBeNull();
+      });
+      it('Should return null for an empty tree. (post-order)', () => {
+        expect(new BinaryTree().postOrderTraversal()).toBeNull();
+      });
+
+      let rootOnlyBinaryTree = new BinaryTree();
+      rootOnlyBinaryTree.root = new TreeNode(1);
+
+      it('Should return single node value. (in-order)', () => {
+        expect(rootOnlyBinaryTree.inOrderTraversal()).toEqual([1]);
+      });
+      it('Should return single node value. (pre-order)', () => {
+        expect(rootOnlyBinaryTree.preOrderTraversal()).toEqual([1]);
+      });
+      it('Should return single node value. (post-order)', () => {
+        expect(rootOnlyBinaryTree.postOrderTraversal()).toEqual([1]);
+      });
     });
   });
 });
