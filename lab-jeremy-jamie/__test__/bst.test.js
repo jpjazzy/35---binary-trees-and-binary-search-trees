@@ -103,5 +103,20 @@ describe('Binary Search Tree testing', function() {
         expect(_removeTestBST.root).toBeNull();
       });
     });
+
+    describe('#_findMinNode test (PRIVATE HELPER METHOD)', function() {
+      it('Should find minimum node in testBST - value of 5', () => {
+        expect(testBST._findMinNode(testBST.root).value).toEqual(5);
+      });
+    });
+
+    describe('#_height test (PRIVATE HELPER METHOD)', function() {
+      it('Should find height of the node in testBST - 4', () => {
+        expect(testBST._height(testBST.root)).toEqual(4);
+      });
+      it('Should find height of the node in in a new BST (null root) - 0', () => {
+        expect(new BST()._height(new BST().root)).toEqual(0);
+      });
+    });
   });
 });
