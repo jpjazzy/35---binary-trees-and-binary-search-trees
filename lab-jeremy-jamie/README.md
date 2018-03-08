@@ -36,6 +36,20 @@ BinaryTree.inOrderTraversal() = // Prints out the binary tree in in-order orient
 
 Helper functions are all labeled with an _ preceeding the function name. I will not display them, but please do not use them unless you're implementing features for other functions.
 
+## Big-O notation
+
+For each of the following commands the Big-O notation is as follows:
+```
+TreeNode, BST, and BinaryTree constructors // O(1)
+BST.insert(TreeNode) // Big-O notation of O(n)
+BST.find(value) // Big-O notation of O(n)
+BST.remove(value) // Big-O notation of O(n)
+BST.isBalanced() // Big-O notation of O(n)
+BinaryTree.preOrderTraversal() // Big-O notation of O(n)
+BinaryTree.postOrderTraversal() // Big-O notation of O(n)
+BinaryTree.inOrderTraversal() // Big-O notation of O(n)
+```
+
 ## Running tests
 
 Simply use the following command in your terminal once you have jest installed:
